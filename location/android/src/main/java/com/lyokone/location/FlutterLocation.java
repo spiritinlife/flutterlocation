@@ -360,6 +360,14 @@ class FlutterLocation
                                 case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
                                     result.error("SERVICE_STATUS_DISABLED",
                                             "Failed to get location. Location services disabled", null);
+                                    break;            
+                                case LocationSettingsStatusCodes.CANCELED:
+                                    result.error("SERVICE_STATUS_CANCELED",
+                                            "Failed to get location. Location services disabled", null);
+                                    break;
+                                default:
+                                    result.error("SERVICE_STATUS_CANCELED",
+                                            "Failed to get location. Location services disabled", null);
                                     break;
                             }
                         } else {
